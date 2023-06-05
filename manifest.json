@@ -1,0 +1,45 @@
+{
+  "manifest_version": 2,
+  "name": "Browser Fingerprint Protector",
+  "description": "Обеспечивает защиту от браузерного отпечатка, предотвращая идентификацию и отслеживание ваших онлайн-действий.",
+  "version": "1.0",
+  "permissions": [
+    "storage",
+    "contextMenus",
+    "notifications",
+    "webRequest",
+    "tabs",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
+  "browser_action": {
+    "default_icon": {
+      "128": "popup/128.png"
+    },
+    "default_popup": "popup/popup.html"
+  },
+  "icons": {
+    "128": "popup/128.png"
+  },
+  "background": {
+    "scripts": [
+      "lib/1ModuleHeaderModifications.js",
+      "lib/background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "js": [
+        "lib/2ModuleFontMasking.js",
+        "lib/3ModuleWebglProtection.js",
+        "lib/4ModuleCanvasDefender.js"
+      ],
+      "match_about_blank": true,
+      "matches": [
+        "*://*/*"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}
