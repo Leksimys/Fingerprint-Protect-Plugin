@@ -14,12 +14,12 @@
   ],
   "browser_action": {
     "default_icon": {
-      "128": "popup/128.png"
+      "48": "popup/48.png"
     },
     "default_popup": "popup/popup.html"
   },
   "icons": {
-    "128": "popup/128.png"
+    "48": "popup/48.png"
   },
   "background": {
     "scripts": [
