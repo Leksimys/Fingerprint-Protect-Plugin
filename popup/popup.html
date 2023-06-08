@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Browser Fingerprint Protector</title>
+  <link rel="stylesheet" type="text/css" href="popup.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #2d3748;
+      color: #edf2f7;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: #1a202c;
+      border-radius: 15px;
+      box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .header img {
+      width: 48px;
+      height: 48px;
+	  margin-right: 8px;
+    }
+
+    .header h1 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #a0aec0;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+      margin-top: 20px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #4a5568;
+      transition: 0.4s;
+      border-radius: 34px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: #edf2f7;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #3182ce;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    .module-label {
+      font-size: 18px;
+      font-weight: 500;
+      color: #a0aec0;
+    }
+
+  </style>
+  <script src="popup.js"></script>
+</head>
+<body>
+  <div class="header">
+    <img src="48.png" alt="Logo">
+    <h1>Browser Fingerprint Protector</h1>
+  </div>
+  
+  <div id="module-toggle">
+    <label class="switch" for="header-modification-switch">
+      <input type="checkbox" id="header-modification-switch">
+      <span class="slider"></span>
+    </label>
+    <p class="module-label">Header Modifications</p>
+  </div>
+</body>
+</html>
